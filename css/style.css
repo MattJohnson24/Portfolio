@@ -277,6 +277,9 @@ a:hover{
     font-size: 20px;
     width: 50vw;
     padding-left: 10%;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .profile-pic{
@@ -313,7 +316,7 @@ a:hover{
     display: flex;
     border: #000000;
     border: 3px solid transparent;
-    margin-top: 30px;
+    margin-bottom: 4vh;
     z-index: 1;
 }
 
@@ -323,16 +326,24 @@ a:hover{
     padding-top: 2vh;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    overflow: auto;
 }
 
 .project-description2{
     color: #FFFFFF;
     padding-left: 2vw;
+    padding-right: 4vw;
 }
 
 .project-image{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+    width: 30%;
+    min-width: 280px;
+    height: auto;
 }
 
 .project-name{
@@ -397,4 +408,32 @@ a:hover{
     background-color: initial;
     background-position: 0 0;
     color: #FF4742;
+}
+
+.footer{
+    background-color: #d7dfe5;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    gap: 10%;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 2vh;
+}
+
+.contact-me-footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-footer{
+    display: flex;
+    flex-direction: column;
+}
+
+.general-footer{
+    display: flex;
+    flex-direction: column;
 }
