@@ -225,6 +225,11 @@ a:hover{
     animation-name: slidein;
 }
 
+.info-2{
+    display: flex;
+    gap: 20px;
+}
+
 @keyframes slidein {
     from{
         margin-top: 400px;
@@ -239,6 +244,36 @@ a:hover{
     font-size: 7vh;
     animation-duration: 3s;
     animation-name: type;
+}
+
+@media screen and (max-width: 770px){
+    .name{
+        font-size: 4vh;
+        animation: none;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        animation: none;
+    }
+    .info-2{
+        justify-content: center;
+    }
+    .intro{
+        background-blend-mode: lighten;
+        justify-content: center;
+        background-position: bottom;
+        padding-bottom: 900px;
+    }
+    .arrows-body{
+        left: 45%;
+    }
+    .hi{
+        width: 100%;
+        padding-left: initial;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 @keyframes type{
