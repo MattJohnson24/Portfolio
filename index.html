@@ -27,19 +27,34 @@
                 <div class="header-contact">
                     <h1><a style="text-decoration: none;" href="#contact">Contact</a></h1>
                 </div>
+                <div class="header-menu">
+                    <img src="img/menu.svg" class="menu-icon" onclick="toggleMenu()">
+                    <img src="img/close.svg" class="close-icon" onclick="toggleMenu()">
+                </div>
             </div>
         </div>
+        <div id="drop-down-menu">
+            <span><a href="#about" class="drop-down-text" onclick="toggleMenu()">About</a></span>
+            <hr style="width: 100%;">
+            <span><a href="#projects" class="drop-down-text" onclick="toggleMenu()">Projects</a></span>
+            <hr style="width: 100%;">
+            <span><a href="#contact" class="drop-down-text" onclick="toggleMenu()">Contacts</a></span>
+        </div>
     </header>
-    <section class="intro" id="intro">
+    <section class="intro" id="intro" onclick="closeMenu()">
         <div class="hi">
             <div class="name">
                 <h1>Hi, I am<br><span style="color:#d4909b">Matthew</span></h1>
             </div>
             <div class="info">
-                <a href="https://docs.google.com/document/d/15FqO-JlnuSqJCf3cHzBhI8nf_XP9azSM-KlWsCpqogM/edit?usp=sharing"><button class="resume">Resume</button></a>
+                <a href="https://docs.google.com/document/d/15FqO-JlnuSqJCf3cHzBhI8nf_XP9azSM-KlWsCpqogM/edit?usp=sharing">
+                    <div>
+                        <button class="resume"><b>Resume</b></button>
+                    </div>
+                </a>
                 <div class="info-2">
-                    <a href="https://www.linkedin.com/in/matthew-johnson-15362723a/"><img src="img/linkedin.svg"></a>
-                    <a href="https://github.com/MattJohnson24"><img style="height: 80px; width: 80px;" src="img/github.png"></a>
+                    <a href="https://www.linkedin.com/in/matthew-johnson-15362723a/"><img id="linkedin" src="img/linkedin.svg"></a>
+                    <a href="https://github.com/MattJohnson24"><img id="github" style="height: 80px; width: 80px;" src="img/github.png"></a>
                 </div>
             </div>
         </div>
@@ -93,11 +108,11 @@
                         <div class="tech" style="background-color: #2bcaff;">Docker</div>
                     </div>
                     <p class="project-description2">InstaChess offers the traditional game of chess paired with a seamless user-friendly platform where chess enthusiasts can easily connect and play against one another in real-time quicker than ever.</p>
-                    <a href="https://github.com/MattJohnson24/InstaChess">
-                        <div class="view-code">
-                            <span>View Code</span>
-                        </div>
-                    </a>
+                        <a href="https://github.com/MattJohnson24/InstaChess">
+                            <div class="view-code">
+                                <span>View Code</span>
+                            </div>
+                        </a>    
                 </div>
             </div>
             <div class="project-box">
@@ -115,7 +130,7 @@
                         <div class="view-code">
                             <span>View Code</span>
                         </div>
-                    </a>
+                    </a>    
                 </div>
             </div>
             <div class="project-box">
@@ -132,7 +147,7 @@
                     <p class="project-description2">Votability is a dynamic and user-friendly app designed to streamline the brainstorming process and allow groups to democratically select the best ideas through a simple voting system.</p>
                     <a href="https://github.com/tylerdak/CSE312GroupProject">
                         <div class="view-code">
-                            <span>View Code</span>
+                                <span>View Code</span>
                         </div>
                     </a>
                 </div>
@@ -147,9 +162,9 @@
                         <div class="tech" style="background-color: #2bd4ff;">CSS</div>
                     </div>
                     <p class="project-description2">Spark your creativity with weekly inspiration, offering new themes and topics to explore. Share your work with others as you build your digital portfolio.</p>
-                    <a href="https://github.com/MattJohnson24/Creative-Block">
+                    <a href="https://github.com/MattJohnson24/Creative-Block"> 
                         <div class="view-code">
-                            <span>View Code</span>
+                                <span>View Code</span>
                         </div>
                     </a>
                 </div>
@@ -159,9 +174,9 @@
     <section class="footer" id="contact">
         <div class="contact-me-footer">
             <b><span>Contact Me</span></b>
-            <a href="mailto:matt.r.johnson24@gmail.com"><span>matt.r.johnson24@gmail.com</span></a>
-            <a href="https://www.linkedin.com/in/matthew-johnson-15362723a/"><span>LinkedIn</span></a>
-            <a href="https://github.com/MattJohnson24"><span>GitHub</span></a>
+            <span><a href="mailto:matt.r.johnson24@gmail.com">matt.r.johnson24@gmail.com</a></span>
+            <span><a href="https://www.linkedin.com/in/matthew-johnson-15362723a/">LinkedIn</a></span>
+            <span><a href="https://github.com/MattJohnson24">GitHub</a></span>
         </div>
         <div class="projects-footer">
             <b><span>Projects</span></b>
@@ -172,9 +187,9 @@
         </div>
         <div class="general-footer">
             <b><span>General</span></b>
-            <a href="#intro"><span>Home</span></a>
-            <a href="#about"><span>About</span></a>
-            <a href="#projects"><span>Projects</span></a>
+            <span><a href="#intro">Home</a></span>
+            <span><a href="#about">About</a></span>
+            <span><a href="#projects">Projects</a></span>
         </div>
     </section>
     <script src="js/index.js"></script>

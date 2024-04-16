@@ -99,6 +99,7 @@
     font-weight: 400;
     font-style: normal;
     min-width: 600px;
+    border-bottom: solid #000000;
 }
 
 .header-left{
@@ -108,7 +109,7 @@
 
 .header-right{
     display: flex;
-    position: absolute;
+    position: fixed;
     right: 20px;
 }
 
@@ -201,20 +202,90 @@ a:hover{
 }
 
 .resume{
-    color: #FFFFFF;
-    background-color: #2548E3;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
     border: none;
-    border-radius: 15px;
-    font-size: 50px;
-    font-family: "Lalezar", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    padding-top: 15px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    padding: 12px 14px;
+    font-size: 28px;
+}
+
+.resume::before{
+    cursor: pointer;
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #D4909B,
+      #DAA0A9,
+      #E0B0B8,
+      #E6C0C6,
+      #EDCFD4,
+      #F3DFE2,
+      #F9EFF1,
+      #FFFFFF,
+      #D4909B
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-button-85 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+#linkedin, #github{
+    transform: rotate(0deg);
+    transition: transform .5s ease-in-out;
+}
+
+#linkedin:hover, #github:hover{
+    transform: rotate(360deg);
+}
+
+
+
+@keyframes glowing-button-85 {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+
+.resume:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 
 .resume:hover{
-    color: #000000;
-    cursor: pointer;
+    color: #d4909b;
 }
 
 .info
@@ -223,11 +294,13 @@ a:hover{
     gap: 30px;
     animation-duration: 3s;
     animation-name: slidein;
+    align-items: center;
 }
 
 .info-2{
     display: flex;
     gap: 20px;
+    padding-top: 7px;
 }
 
 @keyframes slidein {
@@ -315,6 +388,7 @@ a:hover{
     font-family: "ABeeZee", sans-serif;
     font-weight: 400;
     font-style: normal;
+    min-width: 220px;
 }
 
 .profile-pic{
@@ -322,6 +396,22 @@ a:hover{
     height:60vh;
     z-index: 1;
 }
+
+@media screen and (max-width: 965px){
+    .about-me-text{
+        font-size: 16px;
+        flex: 1;
+        padding-right: 10%;
+    }
+
+    .profile-pic{
+        padding-left: 10%;
+        z-index: 1;
+        height: 30vh;
+        display: none;
+    }
+}
+
 
 .projects{
     display: block;
@@ -353,9 +443,12 @@ a:hover{
     border: 3px solid transparent;
     margin-bottom: 4vh;
     z-index: 1;
+    justify-content: center;
 }
 
 .project-description{
+    display: flex;
+    flex-direction: column;
     background: #494036;
     width: 40vw;
     padding-top: 2vh;
@@ -376,9 +469,10 @@ a:hover{
 .project-image{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    width: 30%;
+    width: 10%;
     min-width: 280px;
     height: auto;
+    max-height: 315px;
 }
 
 .project-name{
@@ -389,6 +483,8 @@ a:hover{
     font-weight: 400;
     font-style: normal;
 }
+
+
 
 .footer{
     font-size: 20px;
@@ -403,6 +499,10 @@ a:hover{
     display: flex;
     gap: 3%;
     padding-left: 2vw;
+    padding-right: 2vw;
+    flex-wrap: wrap;
+    height: auto;
+    grid-gap: 3px;
 }
 
 .tech{
@@ -445,6 +545,31 @@ a:hover{
     color: #FF4742;
 }
 
+@media screen and (max-width: 655px){
+    .project-box{
+        flex-direction: column;
+    }
+
+    .project-image{
+        border-top-left-radius: initial;
+        border-bottom-left-radius: initial;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        align-self: center;
+    }
+
+    .project-description{
+        min-width: 280px;
+        height: auto;
+        max-height: 315px;
+        border-top-right-radius: initial;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        padding-bottom: 10px;
+        align-self: center;
+    }
+}
+
 .footer{
     background-color: #d7dfe5;
     padding-top: 3vh;
@@ -471,4 +596,74 @@ a:hover{
 .general-footer{
     display: flex;
     flex-direction: column;
+}
+
+.header-menu{
+    position: relative;
+    margin-right: 2px;
+}
+
+.menu-icon{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.close-icon{
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.menu-icon:hover{
+    filter: invert(86%) sepia(53%) saturate(1708%) hue-rotate(290deg) brightness(90%) contrast(81%);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 690px){
+    .header-about, .header-projects, .header-contact{
+        display: none;
+    }
+
+    .header-menu{
+        display: block;
+    }
+
+}
+
+#drop-down-menu{
+    position: fixed;
+    margin-top: 73px;
+    width: 100%;
+    display: none;
+    height: 150px;
+    background-color: #FFFFFF;
+    z-index: 3;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 10px;
+    border-bottom: solid #000000;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+}
+
+.drop-down-text{
+    font-size: 30px;
+    color: #000000;
+}
+
+@media screen and (max-width: 530px){
+    .footer{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
